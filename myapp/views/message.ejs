@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background: #2e6da4;
+            text-align: center;
+            font-size: 18px;
+        }
+        .box>h3{
+            font-size: 20px;
+            line-height: 20px;
+            color: white;
+        }
+        .box>span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3><%=massge%></h3>
+        <span>5</span>秒后自动跳转 <br>
+        <p>点击<a href="<%=url%>">这里</a>跳转</p>
+
+    </div>
+</body>
+<script>
+    let span=document.querySelector("span");
+    let num=5;
+    setInterval(function () {
+        num--;
+        if(num<0){
+            location.href="/";
+        }else {
+            span.innerHTML=num;
+        }
+    },1000)
+</script>
+</html>
